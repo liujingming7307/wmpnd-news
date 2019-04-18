@@ -1,0 +1,103 @@
+.news-wrapper {
+    width: 750rpx;
+    min-height: 100%;
+}
+
+.hot-news {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hot-news .news-img {
+    position: relative;
+    z-index: 0;
+    vertical-align: top;
+    width: 100%;
+}
+
+.hot-news .news-content {
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    width: calc(100% - 56rpx);
+    height: calc(100% - 56rpx);
+    box-sizing: border-box;
+    border-radius: 10rpx;
+    overflow: hidden;
+    margin: 28rpx;
+    box-shadow: 0 0 0 50rpx rgba(255, 255, 255, 0.9);
+}
+
+.news-content .hot-flag {
+    position: absolute;
+    width: 80rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-weight: bold;
+    top: 0;
+    right: 0;
+    font-size: 25rpx;
+    color: #fff;
+    border-radius: 0 0 0 10rpx;
+    background: rgba(255, 0, 0, 0.3)
+}
+
+.news-content .news-title {
+    position: absolute;
+    left: 25rpx;
+    bottom: 60rpx;
+    width: 600rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #fff;
+    line-height: 40rpx;
+}
+
+.news-content .news-info {
+    position: absolute;
+    left: 25rpx;
+    bottom: 20rpx;
+    font-size: 25rpx;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.news-source, .news-date {
+    display: inline-block;
+    padding-right: 30rpx;
+}
+
+.news-list {
+    padding: 0 28rpx;
+}
+
+.news-list .news-item {
+    padding: 30rpx 0 29rpx 0;
+    border-bottom: 1rpx solid #eeeeee;
+}
+
+.news-item .news-img {
+    display: inline-block;
+    width: 185rpx;
+    height: 125rpx;
+    border-radius: 5rpx;
+}
+
+.news-item .news-info-wrapper {
+    display: inline-block;
+    width: 479rpx;
+    padding-right: 30rpx;
+}
+
+.news-item .news-info-wrapper .news-title {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #000000;
+    line-height: 40rpx;
+}
+
+.news-item .news-info-wrapper .news-info{
+    font-size: 25rpx;
+    color: #000000;
+}
