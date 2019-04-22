@@ -35,6 +35,10 @@ Page({
                     newsDetail: result
                 })
             },
+            fail: err => {
+                wx.showToast({ title: '网络连接失败,请稍后再试!' })
+                console.log(err);
+            },
             complete: () => {
                 callback && callback()
             }

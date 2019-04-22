@@ -1,17 +1,17 @@
-const weatherMap = {
-    'gn': '国内',
-    'gj': '国际',
-    'cj': '财经',
-    'yl': '娱乐',
-    'js': '军事',
-    'ty': '体育',
-    'other': '其他'
-}
 Page({
     data: {
         activeType: "gn",
         newsList: [],
-        hotNews: {}
+        hotNews: {},
+        typeList: [
+            { key: 'gn', value: '国内' },
+            { key: 'gj', value: '国际' },
+            { key: 'cj', value: '财经' },
+            { key: 'yl', value: '娱乐' },
+            { key: 'js', value: '军事' },
+            { key: 'ty', value: '体育' },
+            { key: 'other', value: '其他' }
+        ]
     },
     onLoad() {
         this.getNewsList();
@@ -27,6 +27,12 @@ Page({
         this.getNewsList(() => {
             wx.stopPullDownRefresh()
         })
+    },
+    changeType(event) {
+        this.setData({
+            activeType: event.currentTarget.dataset.key
+        })
+        this.getNewsList();
     },
     getNewsList(callback) {
         wx.request({
@@ -52,14 +58,18 @@ Page({
                     newsList: arr
                 })
             },
+            fail: err => {
+                wx.showToast({ title: '网络连接失败,请稍后再试!' })
+                console.log(err);
+            },
             complete: () => {
                 callback && callback()
             }
         })
     },
-    showNewsDetail(event){
+    showNewsDetail(event) {
         wx.navigateTo({
             url: '/pages/detail/detail?id=' + event.currentTarget.dataset.id,
-          })
+        })
     }
 })

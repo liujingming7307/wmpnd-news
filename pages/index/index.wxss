@@ -3,6 +3,38 @@
     min-height: 100%;
 }
 
+.newstype-list {
+    width: 100%;
+    height: 80rpx;
+    background: #2c95dc;
+}
+
+.newstype-item {
+    position: relative;
+    display: inline-block;
+    width: 100rpx;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    text-align: center;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.activetype {
+    opacity: 1;
+}
+
+.activetype .bottomline {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 35rpx;
+    bottom: 10rpx;
+    height: 4rpx;
+    width: 30rpx;
+    background: #ffffff;
+}
+
 .hot-news {
     position: relative;
     width: 100%;
@@ -97,7 +129,7 @@
     line-height: 40rpx;
 }
 
-.news-item .news-info-wrapper .news-info{
+.news-item .news-info-wrapper .news-info {
     font-size: 25rpx;
     color: #000000;
 }

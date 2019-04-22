@@ -1,16 +1,19 @@
 <view class="news-wrapper">
     <scroll-view scroll-x="{{true}}">
         <view class="newstype-list">
-            <view class="newstype-item" wx:for="{{typeList}}"></view>
+            <view class="{{activeType === item.key?'newstype-item activetype':'newstype-item'}}" wx:for="{{typeList}}" data-key="{{item.key}}" bindtap="changeType">
+                {{item.value}}
+                <view class="bottomline"></view>
+            </view>
         </view>
     </scroll-view>
     <view class="hot-news" data-id="{{hotNews.id}}" bindtap="showNewsDetail">
-        <image class="news-img" src="{{hotNews.firstImage}}" />
+        <image class="news-img" src="{{!!hotNews.firstImage?hotNews.firstImage:'/images/no_data.png'}}" />
         <view class="news-content">
             <view class="hot-flag">热门</view>
             <view class="news-title">{{hotNews.title}}</view>
             <view class="news-info">
-                <view class="news-source">{{hotNews.source}}</view>
+                <view class="news-source">{{!!hotNews.source?hotNews.source:'网络来源'}}</view>
                 <view class="news-date">{{hotNews.date}}</view>
             </view>
         </view>
@@ -20,11 +23,11 @@
             <view class="news-info-wrapper">
                 <view class="news-title">{{item.title}}</view>
                 <view class="news-info">
-                    <view class="news-source">{{hotNews.source}}</view>
-                    <view class="news-date">{{hotNews.date}}</view>
+                    <view class="news-source">{{!!item.source?item.source:'网络来源'}}</view>
+                    <view class="news-date">{{item.date}}</view>
                 </view>
             </view>
-            <image class="news-img" src="{{item.firstImage}}" />
+            <image class="news-img" src="{{!!item.firstImage?item.firstImage:'/images/no_data.png'}}" />
         </view>
     </view>
 </view>
